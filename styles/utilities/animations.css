@@ -1,0 +1,84 @@
+/* Animation utility classes */
+
+@utility animate-fade-in {
+  animation: ds-fade-in var(--duration-normal) var(--ease-out) both;
+}
+
+@utility animate-fade-in-up {
+  animation: ds-fade-in-up var(--duration-slow) var(--ease-spring) both;
+}
+
+@utility animate-fade-in-down {
+  animation: ds-fade-in-down var(--duration-slow) var(--ease-spring) both;
+}
+
+@utility animate-scale-in {
+  animation: ds-scale-in var(--duration-normal) var(--ease-spring) both;
+}
+
+@utility animate-slide-in-right {
+  animation: ds-slide-in-right var(--duration-slow) var(--ease-spring) both;
+}
+
+@utility animate-shimmer {
+  background-size: 200% 100%;
+  animation: ds-shimmer 2s var(--ease-linear) infinite;
+}
+
+@utility animate-pulse-glow {
+  animation: ds-pulse-glow 2s var(--ease-in-out) infinite;
+}
+
+@utility animate-spin-slow {
+  animation: ds-spin 1.5s var(--ease-linear) infinite;
+}
+
+/* Stagger delays for orchestrated entrances */
+@utility delay-100 {
+  animation-delay: 100ms;
+}
+
+@utility delay-200 {
+  animation-delay: 200ms;
+}
+
+@utility delay-300 {
+  animation-delay: 300ms;
+}
+
+@utility delay-400 {
+  animation-delay: 400ms;
+}
+
+@utility delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-scale-in,
+  .animate-slide-in-right,
+  .animate-shimmer,
+  .animate-pulse-glow,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+
+  .hover-lift,
+  .hover-scale,
+  .hover-glow,
+  .hover-brightness,
+  .hover-border,
+  .hover-text-primary,
+  .active-press {
+    transition: none !important;
+  }
+
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none !important;
+  }
+}

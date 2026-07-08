@@ -1,0 +1,81 @@
+/* Interactive hover utilities */
+
+@utility hover-lift {
+  transition:
+    transform var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+}
+
+@utility hover-scale {
+  transition: transform var(--duration-normal) var(--ease-spring);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+@utility hover-glow {
+  transition: box-shadow var(--duration-normal) var(--ease-out);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: var(--shadow-glow-sm);
+    }
+  }
+}
+
+@utility hover-brightness {
+  transition: filter var(--duration-fast) var(--ease-out);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
+
+@utility hover-border {
+  transition: border-color var(--duration-fast) var(--ease-out);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: oklch(from var(--primary) l c h / 40%);
+    }
+  }
+}
+
+@utility hover-text-primary {
+  transition: color var(--duration-fast) var(--ease-out);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+@utility active-press {
+  transition: transform var(--duration-fast) var(--ease-out);
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@utility focus-ring {
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}

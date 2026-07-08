@@ -1,0 +1,79 @@
+/* Gradient utilities */
+
+@utility gradient-primary {
+  background-image: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-mid),
+    var(--gradient-end)
+  );
+}
+
+@utility gradient-primary-horizontal {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+}
+
+@utility gradient-subtle {
+  background-image: linear-gradient(
+    135deg,
+    var(--gradient-subtle-start),
+    var(--gradient-subtle-end)
+  );
+}
+
+@utility gradient-radial {
+  background-image: radial-gradient(
+    ellipse 80% 60% at 50% -20%,
+    var(--gradient-subtle-start),
+    transparent 70%
+  );
+}
+
+@utility gradient-text {
+  background-image: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility gradient-border {
+  position: relative;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: var(--z-behind);
+    margin: -1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      var(--gradient-start),
+      var(--gradient-end)
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+  }
+}
+
+@utility gradient-glow {
+  background-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    var(--glow-primary),
+    transparent 70%
+  );
+}
