@@ -14,7 +14,7 @@ function HeroActions({ className, ...props }: HeroActionsProps) {
   return (
     <div
       className={cn(
-        "flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center",
+        "flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4",
         className,
       )}
       {...props}

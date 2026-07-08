@@ -10,7 +10,10 @@ function HeroBadge({ className, children, ...props }: HeroBadgeProps) {
   return (
     <Badge
       variant="glass"
-      className={cn("gap-1.5 px-3 py-1", className)}
+      className={cn(
+        "gap-1.5 px-3 py-1 text-[0.7rem] font-medium tracking-[0.12em] uppercase",
+        className,
+      )}
       {...props}
     >
       <Sparkles aria-hidden className="size-3.5 text-primary" />

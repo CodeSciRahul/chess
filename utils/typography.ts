@@ -3,16 +3,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ds } from "@/constants/design-system";
 
 export const headingVariants = cva(
-  "font-heading font-semibold tracking-tight text-foreground",
+  "font-heading tracking-tight text-foreground",
   {
     variants: {
       level: {
-        h1: "text-4xl leading-tight sm:text-5xl lg:text-6xl",
-        h2: "text-3xl leading-tight sm:text-4xl",
-        h3: "text-2xl leading-snug sm:text-3xl",
-        h4: "text-xl leading-snug sm:text-2xl",
-        h5: "text-lg leading-snug",
-        h6: "text-base leading-snug",
+        h1: "text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl sm:leading-[1.06] lg:text-6xl lg:tracking-tighter",
+        h2: "text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl",
+        h3: "text-2xl font-semibold leading-snug sm:text-3xl",
+        h4: "text-xl font-semibold leading-snug sm:text-2xl",
+        h5: "text-lg font-semibold leading-snug",
+        h6: "text-base font-semibold leading-snug",
       },
       gradient: {
         true: ds.gradient.text,

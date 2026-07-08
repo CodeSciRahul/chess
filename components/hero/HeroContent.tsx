@@ -16,7 +16,7 @@ function HeroContent({ className, ...props }: HeroContentProps) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-6 text-center",
+        "flex flex-col items-center text-center",
         "lg:items-start lg:text-left",
         className,
       )}
@@ -24,22 +24,26 @@ function HeroContent({ className, ...props }: HeroContentProps) {
     >
       <HeroBadge>{badge}</HeroBadge>
 
-      <div className="flex flex-col gap-4">
-        <Heading id="hero-heading" level="h1" className="max-w-2xl">
+      <div className="mt-6 flex flex-col sm:mt-7">
+        <Heading id="hero-heading" level="h1" className="max-w-[20ch]">
           {title.lead}{" "}
           <span className={ds.gradient.text}>{title.accent}</span>
         </Heading>
 
-        <Paragraph size="lead" className="max-w-xl">
+        <Paragraph
+          size="lead"
+          balance
+          className="mt-4 max-w-[42ch] font-medium text-foreground/90 sm:mt-5"
+        >
           {subtitle}
         </Paragraph>
       </div>
 
-      <Paragraph muted className="max-w-xl">
+      <Paragraph muted balance className="mt-5 max-w-[58ch] sm:mt-6">
         {description}
       </Paragraph>
 
-      <HeroActions className="mt-2" />
+      <HeroActions className="mt-8 sm:mt-10" />
     </div>
   );
 }
